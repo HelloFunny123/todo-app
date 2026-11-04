@@ -1,0 +1,32 @@
+cài đặt nodejs LTS (long term support)
+
+todo_app
+    backend
+        npm init -i (package.json)
+        npm install express@4.18.2
+        server.js 
+        free ports on computer: 8000, 8080, 5000, 5001, 5173, 3000, ...
+        package.json
+            type: "commonjs", ---> type: "module",
+            (đổi bởi vì đang sử dụng cú pháp module trong ES6 là import express from 'express';)
+        run backend: node server.js 
+        cách chạy backend nhanh chóng hơn
+        package.json 
+            "scripts" 
+                "dev": "node server.js"
+                    ---> npm run dev 
+        cách không phải khởi động lại backend mỗi khi thay đổi code
+            npm install nodemon -D
+            tự động thêm trong package.json
+                "devDependencies": {
+                    "nodemon": "^3.1.14"
+                }
+            sửa "dev": "node server.js" thành "dev": "nodemon server.js" trong package.json
+            có thể bỏ đi dòng này: 
+                "test": "echo \"Error: no test specified\" && exit 1",
+            script dev sẽ xài lúc đang viết mã (khi mình còn đang sửa mã)
+            còn start sẽ xài khi deploy lên server thật: "start": "node server.js"
+        tạo thư mục src
+            bỏ file server.js vào thư mục 
+    
+    frontend
